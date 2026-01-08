@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package jan06;
+package io;
 
 /**
  *
  * @author SHOHEL
  */
-public class Thread {
+public class deleteFileExample {
     
 }
