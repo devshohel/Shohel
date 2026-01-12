@@ -2,11 +2,11 @@
 package practice.relationship.hasa;
 
 
-public class Test {
+public class FTest {
     public static void main(String[] args) {
-        Department d1 = new Department(121, "IT");
+        FDepartment d1 = new FDepartment(121, "IT");
         
-        Employee e1 = new Employee(10, "Hassan", d1);
+        FEmployee e1 = new FEmployee(10, "Hassan", d1);
         
         e1.display();
     }

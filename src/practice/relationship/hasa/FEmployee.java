@@ -2,12 +2,12 @@
 package practice.relationship.hasa;
 
 
-class Employee {
+public class FEmployee {
     int empId;
     String empName;
-    Department dept;   // HAS-A relationship
+    FDepartment dept;   // HAS-A relationship
 
-    Employee(int empId, String empName, Department dept) {
+    FEmployee(int empId, String empName, FDepartment dept) {
         this.empId = empId;
         this.empName = empName;
         this.dept = dept;
