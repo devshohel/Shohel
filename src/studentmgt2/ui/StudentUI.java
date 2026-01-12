@@ -196,7 +196,7 @@ public class StudentUI extends javax.swing.JFrame {
         lblfees.setText(String.valueOf(stu.getFees()));
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    /**
+    /**0
      * @param args the command line arguments
      */
     public static void main(String args[]) {

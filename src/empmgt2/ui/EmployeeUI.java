@@ -178,6 +178,8 @@ public class EmployeeUI extends javax.swing.JFrame {
         
         EmployeeController ec = new EmployeeController();
         Employee emp = ec.create(e);
+        
+        System.out.println(e);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

@@ -1,14 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package io;
 
-/**
- *
- * @author SHOHEL
- */
+import java.io.File;
+
+
 public class renameFileExample {
-    
+    public static void main(String[] args) {
+        try {
+            File oldFile = new File("C:\\Users\\ahamm\\jalal.text");
+            File newFile = new File("C:\\Users\\ahamm\\jalal_new.txt");
+            if (oldFile.renameTo(newFile)) {
+                System.out.println("File renamed succesful.");
+            } else {
+                System.out.println("File renamed failed");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
