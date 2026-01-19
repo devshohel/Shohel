@@ -11,14 +11,14 @@ public class BufferedReaderExample {
         try {
             FileReader fr = new FileReader("C:\\Users\\ahamm\\test.txt");
             BufferedReader br = new BufferedReader(fr);
-            //System.out.println(br.readLine());
-            //System.out.println(br.readLine());
+            System.out.println(br.readLine());
+            System.out.println(br.readLine());
             
-            String line;
-
-            while ((line = br.readLine()) != null) {                
-                System.out.println(line);
-            }
+//            String line;
+//
+//            while ((line = br.readLine()) != null) {                
+//                System.out.println(line);
+//            }
         } catch (IOException e) {
             e.printStackTrace();
         }

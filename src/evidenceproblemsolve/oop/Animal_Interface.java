@@ -1,19 +1,19 @@
 
-package test;
+package evidenceproblemsolve.oop;
 
 // Interface example
 
-public interface Animal {
+public interface Animal_Interface {
     void makeSound();
 }
 
-class Dog implements Animal{
+class Dog implements Animal_Interface{
     public void makeSound(){
         System.out.println("Dog is barking.");
     }
 }
 
-class Cat implements Animal{
+class Cat implements Animal_Interface{
     public void makeSound(){
         System.out.println("Cat is meowing.");
     }
@@ -21,8 +21,8 @@ class Cat implements Animal{
 
 class AmlTest{
     public static void main(String[] args) {
-        Animal dog = new Dog();
-        Animal cat = new Cat();
+        Animal_Interface dog = new Dog();
+        Animal_Interface cat = new Cat();
         
         dog.makeSound();
         cat.makeSound();
