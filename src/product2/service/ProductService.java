@@ -93,6 +93,6 @@ public class ProductService {
     String sql = "SELECT * FROM product";
     PreparedStatement ps = con.prepareStatement(sql);
     ResultSet rs = ps.executeQuery();
-        return rs;
+        return rs ;
     }
 }

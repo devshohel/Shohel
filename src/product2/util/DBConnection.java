@@ -25,7 +25,7 @@ public class DBConnection {
     
     public static Connection getConnection(){
         try {
-            con = DriverManager.getConnection(DB_URL, DB_URL, DB_PASSWORD);
+            con = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
         } catch (SQLException ex) {
             Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, ex);
         }

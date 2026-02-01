@@ -5,6 +5,13 @@
  */
 package product2.ui;
 
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import product2.model.Product;
+import product2.service.ProductService;
+
 /**
  *
  * @author SHOHEL
@@ -39,7 +46,7 @@ public class ProductCreateUI extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        _table = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,10 +63,20 @@ public class ProductCreateUI extends javax.swing.JFrame {
         jLabel5.setText("Price");
 
         jButton1.setText("Save");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Show");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        _table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -67,7 +84,7 @@ public class ProductCreateUI extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(_table);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -143,6 +160,51 @@ public class ProductCreateUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        ProductService ps = new ProductService();
+        Product p = new Product();
+        p.setPid(Integer.valueOf(_pid.getText()));
+        p.setPname(_pname.getText());
+        p.setQty(Integer.valueOf(_qty.getText()));
+        p.setPrice(Double.valueOf(_price.getText()));
+        int status = 0;
+        try {
+            status = ps.save(p);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        if (status > 0) {
+            JOptionPane.showMessageDialog(rootPane, "Saved");
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Not saved!");
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        ProductService ps = new ProductService();
+        try {
+            ResultSet rs = ps.getResultSet();
+            ResultSetMetaData rsmeta = rs.getMetaData();
+            
+            DefaultTableModel model = new DefaultTableModel();
+            for (int i = 1; i <= rsmeta.getColumnCount(); i++) {
+                model.addColumn(rsmeta.getCatalogName(i));
+            }
+            _table.setModel(model);
+            while (rs.next()) {                
+                Object[] row = new Object[rsmeta.getColumnCount()];
+                for (int i = 0; i < row.length; i++) {
+                    row[i] = rs.getObject(i+1);
+                }
+                model.addRow(row);
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -183,6 +245,7 @@ public class ProductCreateUI extends javax.swing.JFrame {
     private javax.swing.JTextField _pname;
     private javax.swing.JTextField _price;
     private javax.swing.JTextField _qty;
+    private javax.swing.JTable _table;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -191,6 +254,5 @@ public class ProductCreateUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
