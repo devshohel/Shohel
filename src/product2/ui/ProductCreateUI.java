@@ -190,7 +190,7 @@ public class ProductCreateUI extends javax.swing.JFrame {
             
             DefaultTableModel model = new DefaultTableModel();
             for (int i = 1; i <= rsmeta.getColumnCount(); i++) {
-                model.addColumn(rsmeta.getCatalogName(i));
+                model.addColumn(rsmeta.getColumnName(i));   //Column = Catalog (chilo)
             }
             _table.setModel(model);
             while (rs.next()) {                

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package u.util;
+package u2.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -14,20 +14,19 @@ import java.sql.DriverManager;
  */
 public class DBConnection {
     static Connection con;
-    private static final String DRIVER_CLASS = "com.mysql.jdbc.Driver";
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/shohel";
-    private static final String DB_USERNAME = "root";
-    private static final String DB_PASSWORD = "root";
-    
     public static Connection getConnection(){
         try {
-            Class.forName(DB_URL);
-            con = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
-            
+            Class.forName("com.mysql.jdbc.Driver");
+            String url = "jdbc:mysql://localhost:3306/shohel";
+            String username = "root";
+            String password = "root";
+            con = DriverManager.getConnection(url, username, password);
         } catch (Exception e) {
             System.out.println(e);
         }
+        
         return con;
     
     }
+
 }

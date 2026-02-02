@@ -48,7 +48,7 @@ public class WelcomeForm extends javax.swing.JFrame {
         jLabel1.setText("WELCOME");
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Log in");
+        jLabel2.setText("Loged");
 
         name.setBackground(new java.awt.Color(204, 204, 255));
         name.setFont(new java.awt.Font("Castellar", 1, 29)); // NOI18N

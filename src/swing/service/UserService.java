@@ -42,7 +42,5 @@ public class UserService {
         }
     }
 
-    public int save(user.login.model.User u) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
 }
