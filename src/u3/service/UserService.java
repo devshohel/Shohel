@@ -21,11 +21,11 @@ public class UserService {
 
     public int save(User u) throws SQLException {
         con = DBConnection.getConnection();
-        String sql = "INSERT INTO users (name, username, password) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO user (username, password, email) VALUES (?, ?, ?)";
         PreparedStatement ps = con.prepareStatement(sql);
-        ps.setString(1, u.getName());
-        ps.setString(2, u.getUsername());
-        ps.setString(3, u.getPassword());
+        ps.setString(1, u.getUsername());
+        ps.setString(2, u.getPassword());
+        ps.setString(3, u.getEmail());
         int status = ps.executeUpdate();
         return status;
     }
@@ -33,7 +33,7 @@ public class UserService {
     public User checkLogin(User u) throws SQLException{
         con = DBConnection.getConnection();
         User user = new User();
-        String sql = "SELECT * FROM users WHERE username = ?";
+        String sql = "SELECT * FROM user WHERE username = ?";
         PreparedStatement ps = con.prepareStatement(sql);
         ps.setString(1, u.getUsername());
         ResultSet rs = ps.executeQuery();

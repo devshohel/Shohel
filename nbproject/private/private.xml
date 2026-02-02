@@ -2,14 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/ahamm/Documents/GitHub/Shohel/src/product2/service/ProductService.java</file>
-            <file>file:/C:/Users/ahamm/Documents/GitHub/Shohel/src/product4/ui/ProductUpdateUI.java</file>
-            <file>file:/C:/Users/ahamm/Documents/GitHub/Shohel/src/product2/model/Product.java</file>
-            <file>file:/C:/Users/ahamm/Documents/GitHub/Shohel/src/product2/ui/ProductCreateUI.java</file>
-            <file>file:/C:/Users/ahamm/Documents/GitHub/Shohel/src/product2/util/DBConnection.java</file>
-            <file>file:/C:/Users/ahamm/Documents/GitHub/Shohel/src/product2/ui/ProductUpdateUI.java</file>
-            <file>file:/C:/Users/ahamm/Documents/GitHub/Shohel/src/product4/ui/ProductCreateUI.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
